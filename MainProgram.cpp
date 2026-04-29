@@ -79,7 +79,7 @@ public:
     int getValue() const { return value; }  // stub — add const
 
     // TODO 15: NON-const doubleValue() — multiplies value by 2
-    int doubleValue() {return value*2;}  // stub
+    void doubleValue() {value*=2;}  // stub
 
     // TODO 16: const constGetDouble() — returns value * 2 without modifying
     int constGetDouble() const { return value*2; }  // stub — add const + fix body
