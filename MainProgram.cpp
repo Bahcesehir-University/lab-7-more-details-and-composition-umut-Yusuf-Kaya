@@ -27,7 +27,7 @@ public:
     double getY() const { return y; }   // stub — add const
 
     // TODO 4: const display()
-    void display() const { std::cout << "x: "<<x<<"y: "<<y; }
+    void display() const { std::cout << "x: "<<x<<" y: "<<y; }
 
     // TODO 5: declare Rectangle as friend class
     friend class Rectangle;
@@ -44,10 +44,10 @@ public:
         : topLeft(x1,y1), bottomRight(x2,y2) {}  // stub — fix initializer
 
     // TODO 7: const getWidth()
-    double getWidth() const { return topLeft.x-bottomRight.x; }  // stub
+    double getWidth() const { return abs(topLeft.x-bottomRight.x); }  // stub
 
     // TODO 8: const getHeight()
-    double getHeight() const { return topLeft.y-bottomRight.y; }  // stub
+    double getHeight() const { return abs(topLeft.y-bottomRight.y); }  // stub
 
     // TODO 9: const getArea()
     double getArea() const {  return getWidth()*getHeight(); }  // stub
@@ -91,6 +91,14 @@ public:
 // ============================================================
 int main() {
     // TODO 17-21: demo code
-    std::cout << "Complete the TODOs above!" << std::endl;
+    Point a(2,8);
+    Point b(6,9);
+    a.display();
+    std::cout<<"\n";
+    b.display();
+    std::cout<<"\n";
+    Rectangle C(a.getX(),a.getY(),b.getX(),b.getY());
+    std::cout<<C.getArea();
+    
     return 0;
 }
